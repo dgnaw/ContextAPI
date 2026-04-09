@@ -5,7 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { AppContext } from '../../context/AppContext';
 
 export default function ProfileScreen() {
-  const { setIsLoggedIn } = useContext(AppContext);
+  const { logout } = useContext(AppContext);
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -21,7 +21,7 @@ export default function ProfileScreen() {
 
         <TouchableOpacity 
           style={styles.signOutBtn}
-          onPress={() => setIsLoggedIn(false)}
+          onPress={() => logout()} 
         >
           <Text style={styles.signOutText}>Sign Out</Text>
         </TouchableOpacity>

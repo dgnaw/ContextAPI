@@ -12,7 +12,7 @@ import { AntDesign, FontAwesome } from '@expo/vector-icons';
 import { AppContext } from '../../context/AppContext';
 
 export default function SignInScreen() {
-  const { setIsLoggedIn } = useContext(AppContext);
+  const { login } = useContext(AppContext);
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -44,12 +44,9 @@ export default function SignInScreen() {
           <Text style={styles.forgotText}>Forgot password?</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity 
-          style={styles.signInBtn}
-          onPress={() => setIsLoggedIn(true)}
-        >
+        <TouchableOpacity style={styles.signInBtn} onPress={() => login()}>
           <Text style={styles.signInBtnText}>Sign In</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> 
 
         <Text style={styles.orText}>Or sign in with</Text>
 
